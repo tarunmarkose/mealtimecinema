@@ -705,22 +705,21 @@
     font-size: 12px;
   }
   .lock-steps em { font-style: normal; font-weight: 600; color: var(--tomato); }
-  .lock-deeplink {
+  .lock-deeplink-note {
     display: block;
     width: 100%;
-    margin-top: 4px;
+    margin-top: 8px;
     padding: 12px 16px;
-    background: var(--butter);
+    background: rgba(255, 209, 102, 0.35);
     color: var(--plum);
-    border: 1.5px solid var(--plum);
+    border: 1px dashed var(--plum);
     border-radius: 12px;
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 14px;
-    cursor: pointer;
-    box-shadow: 2px 2px 0 var(--plum);
+    font-size: 12.5px;
+    line-height: 1.5;
+    text-align: center;
+    font-style: italic;
+    opacity: 0.85;
   }
-  .lock-deeplink:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 var(--plum); }
   .lock-tip {
     margin-top: 14px;
     padding: 12px;
@@ -1228,7 +1227,7 @@
         <li>Toggle <strong>Accessibility Shortcut</strong> to ON — this makes the triple-click work</li>
       </ol>
 
-      <button class="lock-deeplink" id="lock-open-ios-settings">Open Accessibility Settings →</button>
+      <div class="lock-deeplink-note">📲 Open the Settings app on your iPad now, then come back here</div>
 
       <div class="lock-step-header" style="margin-top: 24px;">
         <span class="lock-step-label">Step 2 of 2</span>
@@ -1261,7 +1260,7 @@
         <li>Toggle <strong>Ask for PIN before unpinning</strong> ON</li>
       </ol>
 
-      <button class="lock-deeplink" id="lock-open-android-settings">Open Security Settings →</button>
+      <div class="lock-deeplink-note">📲 Open the Settings app on your phone now, then come back here</div>
 
       <div class="lock-step-header" style="margin-top: 24px;">
         <span class="lock-step-label">Step 2 of 2</span>
@@ -2525,39 +2524,6 @@ if (openInstallHelpBtn) {
     const platform = detectMobilePlatform();
     switchInstallPlatform(platform === 'desktop' ? 'ios' : platform);
     document.getElementById('install-modal').classList.add('show');
-  });
-}
-
-// Deep links to OS settings (these don't always work but it's worth trying;
-// if they don't open settings, the visual instructions still guide the user)
-const lockOpenIosBtn = document.getElementById('lock-open-ios-settings');
-if (lockOpenIosBtn) {
-  lockOpenIosBtn.addEventListener('click', () => {
-    // App-Prefs scheme works on some iOS versions for system settings.
-    // It's been restricted by Apple but still attempts something useful.
-    try {
-      window.location.href = 'App-Prefs:ACCESSIBILITY';
-      // Fallback after short delay if nothing happened
-      setTimeout(() => {
-        showToast('Open Settings → Accessibility manually if it didn\'t open.');
-      }, 800);
-    } catch (e) {
-      showToast('Open Settings → Accessibility manually.');
-    }
-  });
-}
-const lockOpenAndroidBtn = document.getElementById('lock-open-android-settings');
-if (lockOpenAndroidBtn) {
-  lockOpenAndroidBtn.addEventListener('click', () => {
-    // Android intent URLs for security settings
-    try {
-      window.location.href = 'intent://settings/SECURITY_SETTINGS#Intent;scheme=android-app;end';
-      setTimeout(() => {
-        showToast('Open Settings → Security manually if it didn\'t open.');
-      }, 800);
-    } catch (e) {
-      showToast('Open Settings → Security manually.');
-    }
   });
 }
 
