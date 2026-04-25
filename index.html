@@ -466,6 +466,431 @@
   .fav-star:active { transform: scale(0.92); }
   .fav-star.filled { background: var(--butter); }
 
+  /* ---------- Install prompt ---------- */
+  .install-modal-content {
+    text-align: left;
+  }
+  .install-hero {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  .install-icon {
+    width: 72px; height: 72px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--peach), var(--butter));
+    box-shadow: 3px 3px 0 var(--plum);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 38px;
+    margin-bottom: 10px;
+    border: 1.5px solid var(--plum);
+  }
+  .install-sub {
+    font-size: 13px;
+    line-height: 1.5;
+    opacity: 0.75;
+    max-width: 36ch;
+    margin: 0 auto;
+  }
+  .install-tabs {
+    display: flex;
+    gap: 6px;
+    margin: 20px 0 0;
+    padding: 4px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 12px;
+  }
+  .install-tab {
+    flex: 1;
+    padding: 10px 12px;
+    background: transparent;
+    border: none;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--plum);
+    cursor: pointer;
+    opacity: 0.55;
+    transition: all 0.15s;
+  }
+  .install-tab.active {
+    background: var(--plum);
+    color: var(--cream);
+    opacity: 1;
+  }
+  .install-step {
+    display: flex;
+    gap: 12px;
+    padding: 12px 14px;
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .install-step-num {
+    flex-shrink: 0;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: var(--plum);
+    color: var(--cream);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+    margin-top: 1px;
+  }
+  .install-step-text {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--plum);
+  }
+  .install-step-icon-row {
+    display: flex; align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    font-size: 11px;
+    opacity: 0.75;
+  }
+  .install-share-icon {
+    display: inline-flex;
+    width: 36px; height: 36px;
+    align-items: center; justify-content: center;
+    border-radius: 8px;
+    background: var(--cream);
+    border: 1.5px solid var(--plum);
+    color: var(--tomato);
+    flex-shrink: 0;
+  }
+  .install-step-arrow {
+    color: var(--tomato);
+    font-size: 18px;
+    font-weight: 700;
+    animation: arrow-bounce 1.2s ease-in-out infinite;
+  }
+  @keyframes arrow-bounce {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-4px); }
+  }
+  .install-step-where {
+    font-style: italic;
+  }
+  .install-mock {
+    margin-top: 10px;
+    background: var(--cream);
+    border: 1px solid rgba(58,31,77,0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 13px;
+  }
+  .install-mock-row {
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(58,31,77,0.08);
+  }
+  .install-mock-row:last-child { border-bottom: none; }
+  .install-mock-row-disabled {
+    opacity: 0.45;
+  }
+  .install-mock-row-highlight {
+    background: var(--butter);
+    border: 2px solid var(--tomato);
+    border-radius: 6px;
+    margin: 4px;
+    padding: 10px 12px;
+    box-shadow: 0 0 0 0 rgba(229, 89, 52, 0.4);
+    animation: pulse-highlight 1.6s ease-out infinite;
+  }
+  @keyframes pulse-highlight {
+    0%   { box-shadow: 0 0 0 0 rgba(229, 89, 52, 0.5); }
+    70%  { box-shadow: 0 0 0 10px rgba(229, 89, 52, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(229, 89, 52, 0); }
+  }
+  .install-actions {
+    margin-top: 18px;
+    display: flex;
+    gap: 8px;
+  }
+  .install-skip {
+    flex: 1;
+    padding: 12px 16px;
+    background: transparent;
+    color: var(--plum);
+    border: 1.5px dashed rgba(58,31,77,0.4);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  .install-skip:active { opacity: 1; background: rgba(255,255,255,0.5); }
+  .install-fineprint {
+    margin-top: 14px;
+    font-size: 11px;
+    line-height: 1.5;
+    opacity: 0.55;
+    text-align: center;
+  }
+
+  /* ---------- Lock-mode help modal ---------- */
+  .lock-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+    padding: 4px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 12px;
+  }
+  .lock-tab {
+    flex: 1;
+    padding: 10px 12px;
+    background: transparent;
+    border: none;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--plum);
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.15s;
+  }
+  .lock-tab.active {
+    background: var(--plum);
+    color: var(--cream);
+    opacity: 1;
+  }
+  .lock-step-header {
+    margin-bottom: 10px;
+  }
+  .lock-step-label {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--tomato);
+    margin-bottom: 4px;
+  }
+  .lock-step-header h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .lock-steps {
+    list-style: none;
+    counter-reset: lockstep;
+    padding: 0;
+    margin: 0 0 12px 0;
+  }
+  .lock-steps li {
+    counter-increment: lockstep;
+    position: relative;
+    padding: 10px 12px 10px 38px;
+    margin-bottom: 6px;
+    background: white;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .lock-steps li::before {
+    content: counter(lockstep);
+    position: absolute;
+    left: 8px; top: 9px;
+    width: 22px; height: 22px;
+    background: var(--plum);
+    color: var(--cream);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .lock-steps em { font-style: normal; font-weight: 600; color: var(--tomato); }
+  .lock-deeplink {
+    display: block;
+    width: 100%;
+    margin-top: 4px;
+    padding: 12px 16px;
+    background: var(--butter);
+    color: var(--plum);
+    border: 1.5px solid var(--plum);
+    border-radius: 12px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 var(--plum);
+  }
+  .lock-deeplink:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 var(--plum); }
+  .lock-tip {
+    margin-top: 14px;
+    padding: 12px;
+    background: rgba(168,216,234,0.3);
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .lock-help-btn {
+    width: 100%;
+    padding: 14px;
+    background: white;
+    color: var(--plum);
+    border: 1.5px solid var(--plum);
+    border-radius: 12px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 var(--plum);
+  }
+  .lock-help-btn:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 var(--plum); }
+
+  /* ---------- Category-manager modal (video drilldown) ---------- */
+  .catmgr-header {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 6px;
+  }
+  .catmgr-back {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid var(--plum);
+    background: white;
+    font-size: 18px;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 2px 2px 0 var(--plum);
+  }
+  .catmgr-back:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 var(--plum); }
+  #catmgr-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 22px;
+    flex: 1;
+  }
+  .catmgr-toolbar {
+    display: flex; gap: 10px; align-items: center;
+    margin: 12px 0 8px;
+  }
+  #catmgr-search {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1.5px solid rgba(58,31,77,0.2);
+    border-radius: 10px;
+    background: white;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--plum);
+    outline: none;
+  }
+  #catmgr-search:focus { border-color: var(--tomato); }
+  .catmgr-counts {
+    font-size: 11px;
+    opacity: 0.7;
+    white-space: nowrap;
+  }
+  .catmgr-bulk {
+    display: flex; gap: 8px;
+    margin-bottom: 10px;
+  }
+  .catmgr-bulk-btn {
+    flex: 1;
+    padding: 8px 10px;
+    background: rgba(255,255,255,0.6);
+    border: 1px dashed var(--plum);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--plum);
+    cursor: pointer;
+  }
+  .catmgr-list {
+    display: flex; flex-direction: column;
+    gap: 6px;
+    max-height: 50vh;
+    overflow-y: auto;
+    padding: 4px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 12px;
+  }
+  .catmgr-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 10px;
+    background: white;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  .catmgr-row:active { background: var(--cream-2); }
+  .catmgr-row.disabled {
+    opacity: 0.42;
+  }
+  .catmgr-row img {
+    width: 56px; height: 42px;
+    border-radius: 5px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: var(--cream-2);
+  }
+  .catmgr-row-info {
+    flex: 1; min-width: 0;
+    overflow: hidden;
+  }
+  .catmgr-row-title {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--plum);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .catmgr-row-meta {
+    font-size: 11px;
+    opacity: 0.6;
+    margin-top: 2px;
+  }
+  .catmgr-checkbox {
+    width: 26px; height: 26px;
+    border-radius: 6px;
+    border: 1.5px solid var(--plum);
+    background: white;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    color: transparent;
+    transition: background 0.15s, color 0.15s;
+  }
+  .catmgr-row:not(.disabled) .catmgr-checkbox {
+    background: var(--mint);
+    color: white;
+  }
+  .catmgr-empty {
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+    opacity: 0.55;
+  }
+
+  /* Make the category-toggle row tappable to drill in */
+  .cat-toggle-row {
+    cursor: pointer;
+  }
+  .cat-toggle-row:active {
+    background: var(--cream-2);
+  }
+  .cat-toggle-arrow {
+    font-size: 16px;
+    opacity: 0.4;
+    margin-right: 4px;
+  }
+  .cat-toggle-count {
+    font-size: 10px;
+    opacity: 0.55;
+    margin-left: 6px;
+    font-weight: 400;
+  }
+
   /* ---------- Player screen ---------- */
   .app { display: none; position: fixed; inset: 0; background: black; }
   .app.active { display: block; }
@@ -624,6 +1049,108 @@
   </div>
 </section>
 
+<!-- ========== Install prompt (first thing first-time browser users see) ========== -->
+<div class="modal-backdrop" id="install-modal">
+  <div class="modal install-modal-content">
+    <div class="install-hero">
+      <div class="install-icon">🍽️</div>
+      <h3 style="margin-bottom: 4px;">Install Eat & Watch</h3>
+      <p class="install-sub">
+        Add it to your home screen so it opens like a real app — fullscreen, with its own icon.
+      </p>
+    </div>
+
+    <!-- iOS install steps -->
+    <div class="install-panel" data-platform="ios">
+      <div class="install-step">
+        <div class="install-step-num">1</div>
+        <div class="install-step-text">
+          Tap the <strong>Share</strong> button below
+          <div class="install-step-icon-row">
+            <span class="install-share-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                <polyline points="16 6 12 2 8 6"></polyline>
+                <line x1="12" y1="2" x2="12" y2="15"></line>
+              </svg>
+            </span>
+            <span class="install-step-arrow">←</span>
+            <span class="install-step-where">on Safari's bottom bar (or top on iPad)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="install-step">
+        <div class="install-step-num">2</div>
+        <div class="install-step-text">
+          Scroll and tap <strong>"Add to Home Screen"</strong>
+          <div class="install-mock">
+            <div class="install-mock-row install-mock-row-disabled">📋 &nbsp; Copy</div>
+            <div class="install-mock-row install-mock-row-disabled">🔖 &nbsp; Add Bookmark</div>
+            <div class="install-mock-row install-mock-row-highlight">➕ &nbsp; <strong>Add to Home Screen</strong></div>
+            <div class="install-mock-row install-mock-row-disabled">📑 &nbsp; Add to Reading List</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="install-step">
+        <div class="install-step-num">3</div>
+        <div class="install-step-text">
+          Tap <strong>Add</strong> in the top right, then close Safari
+        </div>
+      </div>
+
+      <div class="install-step">
+        <div class="install-step-num">4</div>
+        <div class="install-step-text">
+          Open the app from your home screen — <strong>that's where the magic happens.</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Android install steps -->
+    <div class="install-panel" data-platform="android" style="display:none;">
+      <div class="install-step">
+        <div class="install-step-num">1</div>
+        <div class="install-step-text">
+          Tap the <strong>⋮ menu</strong> (three dots, top right of Chrome)
+        </div>
+      </div>
+      <div class="install-step">
+        <div class="install-step-num">2</div>
+        <div class="install-step-text">
+          Tap <strong>"Install app"</strong> or <strong>"Add to Home screen"</strong>
+        </div>
+      </div>
+      <div class="install-step">
+        <div class="install-step-num">3</div>
+        <div class="install-step-text">
+          Confirm — the app appears on your home screen
+        </div>
+      </div>
+      <div class="install-step">
+        <div class="install-step-num">4</div>
+        <div class="install-step-text">
+          Open it from there for the full experience
+        </div>
+      </div>
+    </div>
+
+    <div class="install-tabs">
+      <button class="install-tab" data-platform="ios">📱 iPhone / iPad</button>
+      <button class="install-tab" data-platform="android">🤖 Android</button>
+    </div>
+
+    <div class="install-actions">
+      <button class="install-skip" id="install-skip">Continue in browser</button>
+    </div>
+
+    <p class="install-fineprint">
+      Browser tabs aren't great for mealtime: pinch-zoom, accidental URL bar taps, the whole thing dies if you switch apps. Installing fixes all of that.
+    </p>
+  </div>
+</div>
+
 <!-- ========== Onboarding modal: ask for child's name and optional photo ========== -->
 <div class="modal-backdrop" id="onboarding-modal">
   <div class="modal" id="onboarding-content">
@@ -667,6 +1194,94 @@
     <p style="font-size: 11px; opacity: 0.55; margin-top: 14px; text-align: center; line-height: 1.5;">
       Everything stays on this device. Photo and camera footage never leave the iPad.
     </p>
+  </div>
+</div>
+
+<!-- ========== Lock Mode help modal ========== -->
+<div class="modal-backdrop" id="lockhelp-modal">
+  <div class="modal" id="lockhelp-content">
+    <div style="text-align: center; margin-bottom: 14px;">
+      <div style="font-size: 56px; line-height: 1; margin-bottom: 6px;">🔒</div>
+      <h3 style="margin-bottom: 4px;">Lock them into the app</h3>
+      <p style="font-size: 13px; opacity: 0.7; line-height: 1.5; max-width: 36ch; margin: 0 auto;">
+        So they can't accidentally swipe away to YouTube or another app. <strong>One-time setup, then just a triple-click at mealtime.</strong>
+      </p>
+    </div>
+
+    <div class="lock-tabs">
+      <button class="lock-tab active" data-platform="ios">📱 iPad / iPhone</button>
+      <button class="lock-tab" data-platform="android">🤖 Android</button>
+    </div>
+
+    <!-- iOS instructions -->
+    <div class="lock-panel" data-platform="ios">
+      <div class="lock-step-header">
+        <span class="lock-step-label">Step 1 of 2</span>
+        <h4>Turn on Guided Access</h4>
+      </div>
+
+      <ol class="lock-steps">
+        <li><strong>Open Settings</strong> → tap <em>Accessibility</em></li>
+        <li>Scroll down to the <em>General</em> section → tap <em>Guided Access</em></li>
+        <li>Toggle <strong>Guided Access</strong> to ON</li>
+        <li>Tap <em>Passcode Settings</em> → <em>Set Guided Access Passcode</em> → choose a 6-digit code (kids can't guess it, but you'll remember it)</li>
+        <li>Toggle <strong>Accessibility Shortcut</strong> to ON — this makes the triple-click work</li>
+      </ol>
+
+      <button class="lock-deeplink" id="lock-open-ios-settings">Open Accessibility Settings →</button>
+
+      <div class="lock-step-header" style="margin-top: 24px;">
+        <span class="lock-step-label">Step 2 of 2</span>
+        <h4>Use it at mealtime</h4>
+      </div>
+
+      <ol class="lock-steps">
+        <li>Open Eat & Watch from the home screen</li>
+        <li><strong>Triple-click the side button</strong> (top button on iPad without home button) or the home button (older iPads)</li>
+        <li>Tap <strong>Start</strong> in the top right</li>
+        <li>iPad is now locked to this app. To exit: triple-click again, enter your passcode, tap End.</li>
+      </ol>
+
+      <div class="lock-tip">
+        💡 <strong>Tip:</strong> While in Guided Access you can also draw a circle around any part of the screen with your finger to disable taps in that region — useful for blocking the YouTube logo inside the player.
+      </div>
+    </div>
+
+    <!-- Android instructions -->
+    <div class="lock-panel" data-platform="android" style="display:none;">
+      <div class="lock-step-header">
+        <span class="lock-step-label">Step 1 of 2</span>
+        <h4>Turn on App Pinning</h4>
+      </div>
+
+      <ol class="lock-steps">
+        <li><strong>Open Settings</strong> → <em>Security</em> (or <em>Security & Privacy</em>)</li>
+        <li>Tap <em>More security settings</em> if shown</li>
+        <li>Find <em>App pinning</em> (or <em>Screen pinning</em>) → toggle ON</li>
+        <li>Toggle <strong>Ask for PIN before unpinning</strong> ON</li>
+      </ol>
+
+      <button class="lock-deeplink" id="lock-open-android-settings">Open Security Settings →</button>
+
+      <div class="lock-step-header" style="margin-top: 24px;">
+        <span class="lock-step-label">Step 2 of 2</span>
+        <h4>Use it at mealtime</h4>
+      </div>
+
+      <ol class="lock-steps">
+        <li>Open Eat & Watch from the home screen</li>
+        <li>Swipe up from the bottom and <strong>hold</strong> to see recent apps</li>
+        <li>Tap the app's icon at the top of its card</li>
+        <li>Tap <strong>Pin</strong> (or <em>Pin this app</em>)</li>
+        <li>To exit: swipe up and hold, then enter your PIN</li>
+      </ol>
+
+      <div class="lock-tip">
+        💡 <strong>Tip:</strong> Older Android versions: tap the square recent-apps button instead of swiping up. Some Samsung devices call this "Pin window" instead.
+      </div>
+    </div>
+
+    <button class="done-btn" id="lockhelp-done" style="margin-top: 24px;">Got it</button>
   </div>
 </div>
 
@@ -720,8 +1335,8 @@
     </div>
 
     <div class="settings-section">
-      <h4>Categories</h4>
-      <p class="settings-section-hint">Turn off categories you don't want to see.</p>
+      <h4>Categories & videos</h4>
+      <p class="settings-section-hint">Tap a category name to manage individual videos. Toggle the switch to hide the whole category.</p>
       <div id="category-toggles"></div>
     </div>
 
@@ -735,11 +1350,41 @@
       <div id="custom-list" class="custom-list"></div>
     </div>
 
+    <div class="settings-section">
+      <h4>Setup</h4>
+      <p class="settings-section-hint">Make the app behave like a proper app, and lock your child in during meals.</p>
+      <button class="lock-help-btn" id="open-install-help" style="margin-bottom: 8px; display:none;">📲 Install on home screen</button>
+      <button class="lock-help-btn" id="open-lock-help">🔒 How to lock them in</button>
+    </div>
+
     <div class="research-note">
       <strong>How detection works:</strong> The app watches a small region around the child's mouth. When something enters it (spoon, fork, finger) AND the mouth is open, that's a bite. Each bite gives a fresh eating window.
     </div>
 
     <button class="done-btn" id="settings-done">Done</button>
+  </div>
+</div>
+
+<!-- ========== Per-category video manager modal ========== -->
+<div class="modal-backdrop" id="catmgr-modal">
+  <div class="modal" id="catmgr-content">
+    <div class="catmgr-header">
+      <button class="catmgr-back" id="catmgr-back" aria-label="Back">←</button>
+      <h3 id="catmgr-title">Category</h3>
+    </div>
+    <p class="settings-section-hint" id="catmgr-hint">Tap a video to hide or show it.</p>
+
+    <div class="catmgr-toolbar">
+      <input type="text" id="catmgr-search" placeholder="Search…" autocomplete="off">
+      <div class="catmgr-counts" id="catmgr-counts"></div>
+    </div>
+
+    <div class="catmgr-bulk">
+      <button class="catmgr-bulk-btn" id="catmgr-show-all">Show all</button>
+      <button class="catmgr-bulk-btn" id="catmgr-hide-all">Hide all</button>
+    </div>
+
+    <div id="catmgr-list" class="catmgr-list"></div>
   </div>
 </div>
 
@@ -1195,6 +1840,35 @@ const CAT_TOGGLES_KEY = 'eatwatch_categories_v2';
 const FAVORITES_KEY = 'eatwatch_favorites_v1';
 const CUSTOM_VIDEOS_KEY = 'eatwatch_custom_videos_v1';
 const PHOTO_KEY = 'eatwatch_child_photo_v1';
+const HIDDEN_VIDEOS_KEY = 'eatwatch_hidden_videos_v1';
+
+function getHiddenVideos() {
+  try { return JSON.parse(localStorage.getItem(HIDDEN_VIDEOS_KEY) || '{}'); }
+  catch (e) { return {}; }
+}
+function isVideoHidden(videoId) {
+  return !!getHiddenVideos()[videoId];
+}
+function setVideoHidden(videoId, hidden) {
+  const map = getHiddenVideos();
+  if (hidden) map[videoId] = 1;
+  else delete map[videoId];
+  localStorage.setItem(HIDDEN_VIDEOS_KEY, JSON.stringify(map));
+}
+function setVideosHiddenBulk(videoIds, hidden) {
+  const map = getHiddenVideos();
+  videoIds.forEach(id => {
+    if (hidden) map[id] = 1;
+    else delete map[id];
+  });
+  localStorage.setItem(HIDDEN_VIDEOS_KEY, JSON.stringify(map));
+}
+function visibleVideosFor(catKey) {
+  const cat = LIBRARY[catKey];
+  let videos = cat.videos;
+  if (cat.isFavorites) videos = getFavoritesPlusCustom();
+  return videos.filter(v => !isVideoHidden(v.id));
+}
 
 function getChildName() {
   return (localStorage.getItem(NAME_KEY) || '').trim();
@@ -1338,12 +2012,9 @@ function renderGallery() {
     if (!toggles[key]) return;
     const cat = LIBRARY[key];
 
-    // For favorites: pull live from storage every render
-    let videos = cat.videos;
-    if (cat.isFavorites) {
-      videos = getFavoritesPlusCustom();
-      if (!videos.length) return;  // hide if nothing favorited yet
-    }
+    // Get visible (not-hidden) videos for this category
+    const videos = visibleVideosFor(key);
+    if (!videos.length) return;  // hide section if everything is hidden / favorites empty
 
     const picked = pickRandom(videos, PER_CATEGORY);
     if (!picked.length) return;
@@ -1407,9 +2078,7 @@ function escapeHtml(s) {
 function reshuffleCategory(key) {
   const rail = sectionsEl.querySelector('.rail[data-cat="' + key + '"]');
   if (!rail) return;
-  let videos = LIBRARY[key].videos;
-  if (LIBRARY[key].isFavorites) videos = getFavoritesPlusCustom();
-  const picked = pickRandom(videos, PER_CATEGORY);
+  const picked = pickRandom(visibleVideosFor(key), PER_CATEGORY);
   rail.innerHTML = '';
   picked.forEach(v => rail.appendChild(makeCard(v)));
 }
@@ -1530,6 +2199,77 @@ function wirePhotoPickers() {
   });
 }
 
+/* ============================================================
+   Install prompt — first thing users see in a fresh browser tab.
+   Detects: are they running standalone (already installed)?
+   If yes → skip. If no → guide them through Add to Home Screen.
+   We remember their dismissal so they don't see this every visit.
+   ============================================================ */
+const INSTALL_DISMISSED_KEY = 'eatwatch_install_dismissed_v1';
+
+function isStandaloneMode() {
+  // iOS PWA detection
+  if (window.navigator.standalone === true) return true;
+  // Android/Chrome PWA detection
+  if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) return true;
+  if (window.matchMedia && window.matchMedia('(display-mode: fullscreen)').matches) return true;
+  return false;
+}
+
+function detectMobilePlatform() {
+  const ua = navigator.userAgent || '';
+  if (/android/i.test(ua)) return 'android';
+  if (/iphone|ipad|ipod/i.test(ua)) return 'ios';
+  // iPad on iOS 13+ reports as Mac. Detect via touch capability.
+  if (/macintosh/i.test(ua) && navigator.maxTouchPoints > 1) return 'ios';
+  return 'desktop';
+}
+
+function switchInstallPlatform(platform) {
+  document.querySelectorAll('.install-tab').forEach(t => {
+    t.classList.toggle('active', t.dataset.platform === platform);
+  });
+  document.querySelectorAll('.install-panel').forEach(p => {
+    p.style.display = (p.dataset.platform === platform ? 'block' : 'none');
+  });
+}
+
+function showInstallPromptIfNeeded() {
+  // Already installed → skip permanently
+  if (isStandaloneMode()) return false;
+
+  // Desktop browser → skip (this app is mobile-first; desktop users will rarely "install")
+  const platform = detectMobilePlatform();
+  if (platform === 'desktop') return false;
+
+  // User dismissed within the last 7 days → don't pester
+  const dismissed = parseInt(localStorage.getItem(INSTALL_DISMISSED_KEY) || '0', 10);
+  if (dismissed && (Date.now() - dismissed) < 7 * 24 * 60 * 60 * 1000) return false;
+
+  // Show the right platform panel by default
+  switchInstallPlatform(platform);
+
+  const modal = document.getElementById('install-modal');
+  if (modal) modal.classList.add('show');
+  return true;
+}
+
+// Wire up tab switching
+document.querySelectorAll('.install-tab').forEach(t => {
+  t.addEventListener('click', () => switchInstallPlatform(t.dataset.platform));
+});
+
+// Skip / continue in browser
+const installSkipBtn = document.getElementById('install-skip');
+if (installSkipBtn) {
+  installSkipBtn.addEventListener('click', () => {
+    localStorage.setItem(INSTALL_DISMISSED_KEY, String(Date.now()));
+    document.getElementById('install-modal').classList.remove('show');
+    // Continue the onboarding flow
+    setTimeout(() => showOnboardingIfNeeded(), 300);
+  });
+}
+
 function showOnboardingIfNeeded() {
   const onboarding = document.getElementById('onboarding-modal');
   const input = document.getElementById('child-name-input');
@@ -1551,6 +2291,8 @@ if (onboardingDoneBtn) {
     setChildName(name);
     document.getElementById('onboarding-modal').classList.remove('show');
     applyChildName();
+    // Auto-flow: continue to lock-mode help so first-time users learn how to lock the device
+    setTimeout(() => showLockHelp(), 350);
   };
 }
 // Enter key submits onboarding
@@ -1571,17 +2313,251 @@ function renderCategoryToggles() {
   container.innerHTML = '';
   CATEGORIES.forEach(key => {
     const cat = LIBRARY[key];
+    const totalVideos = cat.isFavorites ? getFavoritesPlusCustom().length : cat.videos.length;
+    const visibleCount = visibleVideosFor(key).length;
+    const countText = totalVideos === 0
+      ? 'empty'
+      : (visibleCount === totalVideos ? totalVideos + ' videos' : visibleCount + ' of ' + totalVideos + ' shown');
+
     const row = document.createElement('div');
     row.className = 'cat-toggle-row';
     row.innerHTML =
-      '<div class="cat-toggle-label">' + cat.name + '</div>' +
+      '<div class="cat-toggle-label">' + escapeHtml(cat.name) +
+      '<span class="cat-toggle-count">' + countText + '</span>' +
+      '</div>' +
+      '<span class="cat-toggle-arrow">›</span>' +
       '<div class="toggle ' + (toggles[key] ? 'on' : '') + '" data-cat="' + key + '"></div>';
+
     const tog = row.querySelector('.toggle');
-    tog.addEventListener('click', () => {
+    tog.addEventListener('click', (e) => {
+      e.stopPropagation();
       const cur = tog.classList.toggle('on');
       setCategoryToggle(key, cur);
     });
+
+    // Tap anywhere else on the row → open category manager
+    row.addEventListener('click', (e) => {
+      if (e.target === tog || tog.contains(e.target)) return;
+      openCategoryManager(key);
+    });
+
     container.appendChild(row);
+  });
+}
+
+/* ============================================================
+   Per-category video manager — drill in from settings to see
+   every video in a category and toggle individual ones.
+   ============================================================ */
+let catmgrCurrentKey = null;
+let catmgrSearchQuery = '';
+
+function openCategoryManager(catKey) {
+  catmgrCurrentKey = catKey;
+  catmgrSearchQuery = '';
+  const searchInput = document.getElementById('catmgr-search');
+  if (searchInput) searchInput.value = '';
+  renderCategoryManager();
+  document.getElementById('catmgr-modal').classList.add('show');
+}
+
+function renderCategoryManager() {
+  if (!catmgrCurrentKey) return;
+  const cat = LIBRARY[catmgrCurrentKey];
+  const titleEl = document.getElementById('catmgr-title');
+  const hintEl = document.getElementById('catmgr-hint');
+  const listEl = document.getElementById('catmgr-list');
+  const countsEl = document.getElementById('catmgr-counts');
+  if (!cat || !listEl) return;
+
+  titleEl.textContent = cat.name;
+  hintEl.textContent = 'Tap any video to hide or show it.';
+
+  // Source list
+  let videos = cat.isFavorites ? getFavoritesPlusCustom() : cat.videos;
+
+  // Filter by search
+  const q = catmgrSearchQuery.trim().toLowerCase();
+  const filtered = q
+    ? videos.filter(v =>
+        (v.title || '').toLowerCase().indexOf(q) !== -1 ||
+        (v.channel || '').toLowerCase().indexOf(q) !== -1 ||
+        (v.tag || '').toLowerCase().indexOf(q) !== -1)
+    : videos;
+
+  // Counts
+  const totalVisible = videos.filter(v => !isVideoHidden(v.id)).length;
+  countsEl.textContent = totalVisible + ' of ' + videos.length + ' shown';
+
+  // Render
+  listEl.innerHTML = '';
+  if (!filtered.length) {
+    listEl.innerHTML = '<div class="catmgr-empty">' +
+      (videos.length === 0
+        ? 'No videos in this category yet.'
+        : 'No matches for "' + escapeHtml(q) + '"') +
+      '</div>';
+    return;
+  }
+
+  filtered.forEach(v => {
+    const row = document.createElement('div');
+    const hidden = isVideoHidden(v.id);
+    row.className = 'catmgr-row' + (hidden ? ' disabled' : '');
+    row.innerHTML =
+      '<img src="https://img.youtube.com/vi/' + v.id + '/mqdefault.jpg" alt="" loading="lazy">' +
+      '<div class="catmgr-row-info">' +
+        '<div class="catmgr-row-title">' + escapeHtml(v.title) + '</div>' +
+        '<div class="catmgr-row-meta">' + escapeHtml(v.channel || '') + '</div>' +
+      '</div>' +
+      '<div class="catmgr-checkbox">✓</div>';
+
+    row.addEventListener('click', () => {
+      const newHidden = !isVideoHidden(v.id);
+      setVideoHidden(v.id, newHidden);
+      row.classList.toggle('disabled', newHidden);
+      // Live-update count
+      const totalVisible2 = videos.filter(vv => !isVideoHidden(vv.id)).length;
+      countsEl.textContent = totalVisible2 + ' of ' + videos.length + ' shown';
+    });
+
+    listEl.appendChild(row);
+  });
+}
+
+// Search input wiring
+const catmgrSearchInput = document.getElementById('catmgr-search');
+if (catmgrSearchInput) {
+  catmgrSearchInput.addEventListener('input', (e) => {
+    catmgrSearchQuery = e.target.value;
+    renderCategoryManager();
+  });
+}
+
+// Bulk show/hide buttons
+const catmgrShowAllBtn = document.getElementById('catmgr-show-all');
+if (catmgrShowAllBtn) {
+  catmgrShowAllBtn.addEventListener('click', () => {
+    if (!catmgrCurrentKey) return;
+    const videos = LIBRARY[catmgrCurrentKey].isFavorites
+      ? getFavoritesPlusCustom()
+      : LIBRARY[catmgrCurrentKey].videos;
+    setVideosHiddenBulk(videos.map(v => v.id), false);
+    renderCategoryManager();
+  });
+}
+const catmgrHideAllBtn = document.getElementById('catmgr-hide-all');
+if (catmgrHideAllBtn) {
+  catmgrHideAllBtn.addEventListener('click', () => {
+    if (!catmgrCurrentKey) return;
+    const videos = LIBRARY[catmgrCurrentKey].isFavorites
+      ? getFavoritesPlusCustom()
+      : LIBRARY[catmgrCurrentKey].videos;
+    setVideosHiddenBulk(videos.map(v => v.id), true);
+    renderCategoryManager();
+  });
+}
+
+// Back button + outside-click close
+const catmgrModal = document.getElementById('catmgr-modal');
+const catmgrBackBtn = document.getElementById('catmgr-back');
+function closeCategoryManager() {
+  if (catmgrModal) catmgrModal.classList.remove('show');
+  // Refresh the parent settings counts and the gallery
+  renderCategoryToggles();
+}
+if (catmgrBackBtn) catmgrBackBtn.addEventListener('click', closeCategoryManager);
+if (catmgrModal) {
+  catmgrModal.addEventListener('click', (e) => {
+    if (e.target === catmgrModal) closeCategoryManager();
+  });
+}
+
+/* ============================================================
+   Lock-mode help modal
+   ============================================================ */
+const lockhelpModal = document.getElementById('lockhelp-modal');
+const lockhelpDoneBtn = document.getElementById('lockhelp-done');
+const openLockHelpBtn = document.getElementById('open-lock-help');
+const lockTabs = document.querySelectorAll('.lock-tab');
+const lockPanels = document.querySelectorAll('.lock-panel');
+
+function showLockHelp(initialPlatform) {
+  // Auto-pick platform if not specified
+  let platform = initialPlatform;
+  if (!platform) {
+    const ua = navigator.userAgent || '';
+    platform = (/android/i.test(ua)) ? 'android' : 'ios';
+  }
+  switchLockPlatform(platform);
+  if (lockhelpModal) lockhelpModal.classList.add('show');
+}
+function switchLockPlatform(platform) {
+  lockTabs.forEach(t => t.classList.toggle('active', t.dataset.platform === platform));
+  lockPanels.forEach(p => p.style.display = (p.dataset.platform === platform ? 'block' : 'none'));
+}
+lockTabs.forEach(t => {
+  t.addEventListener('click', () => switchLockPlatform(t.dataset.platform));
+});
+if (lockhelpDoneBtn) {
+  lockhelpDoneBtn.addEventListener('click', () => {
+    lockhelpModal.classList.remove('show');
+  });
+}
+if (lockhelpModal) {
+  lockhelpModal.addEventListener('click', (e) => {
+    if (e.target === lockhelpModal) lockhelpModal.classList.remove('show');
+  });
+}
+if (openLockHelpBtn) {
+  openLockHelpBtn.addEventListener('click', () => showLockHelp());
+}
+
+// Install button in settings — only visible if not already installed
+const openInstallHelpBtn = document.getElementById('open-install-help');
+if (openInstallHelpBtn) {
+  // Show it only if not running standalone
+  if (!isStandaloneMode() && detectMobilePlatform() !== 'desktop') {
+    openInstallHelpBtn.style.display = 'block';
+  }
+  openInstallHelpBtn.addEventListener('click', () => {
+    // Force-show the install modal regardless of dismissal cache
+    const platform = detectMobilePlatform();
+    switchInstallPlatform(platform === 'desktop' ? 'ios' : platform);
+    document.getElementById('install-modal').classList.add('show');
+  });
+}
+
+// Deep links to OS settings (these don't always work but it's worth trying;
+// if they don't open settings, the visual instructions still guide the user)
+const lockOpenIosBtn = document.getElementById('lock-open-ios-settings');
+if (lockOpenIosBtn) {
+  lockOpenIosBtn.addEventListener('click', () => {
+    // App-Prefs scheme works on some iOS versions for system settings.
+    // It's been restricted by Apple but still attempts something useful.
+    try {
+      window.location.href = 'App-Prefs:ACCESSIBILITY';
+      // Fallback after short delay if nothing happened
+      setTimeout(() => {
+        showToast('Open Settings → Accessibility manually if it didn\'t open.');
+      }, 800);
+    } catch (e) {
+      showToast('Open Settings → Accessibility manually.');
+    }
+  });
+}
+const lockOpenAndroidBtn = document.getElementById('lock-open-android-settings');
+if (lockOpenAndroidBtn) {
+  lockOpenAndroidBtn.addEventListener('click', () => {
+    // Android intent URLs for security settings
+    try {
+      window.location.href = 'intent://settings/SECURITY_SETTINGS#Intent;scheme=android-app;end';
+      setTimeout(() => {
+        showToast('Open Settings → Security manually if it didn\'t open.');
+      }, 800);
+    } catch (e) {
+      showToast('Open Settings → Security manually.');
+    }
   });
 }
 
@@ -2075,7 +3051,13 @@ stopBtn.onclick = stop;
 renderGallery();
 wirePhotoPickers();
 applyChildName();
-showOnboardingIfNeeded();
+
+// First-launch flow: install prompt → name/photo → lock-mode help
+// If install prompt is shown, "Continue in browser" chains to showOnboardingIfNeeded.
+// If install is skipped (standalone mode, desktop, or recently dismissed), go directly to name onboarding.
+if (!showInstallPromptIfNeeded()) {
+  showOnboardingIfNeeded();
+}
 </script>
 </body>
 </html>
