@@ -72,9 +72,35 @@
   .icon-btn:active { transform: translate(1px,1px); box-shadow: 1px 1px 0 var(--plum); }
 
   .hero { margin: 6px 20px 24px; }
+  .hero-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .hero-avatar {
+    flex-shrink: 0;
+    width: 86px; height: 86px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--plum);
+    box-shadow: 4px 4px 0 var(--plum);
+    background: var(--cream-2);
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-avatar img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-avatar-fallback {
+    font-size: 38px;
+    line-height: 1;
+  }
+  .hero-text { flex: 1; min-width: 0; }
   .hero h1 {
     font-family: 'Fraunces', serif;
-    font-weight: 900; font-size: 32px;
+    font-weight: 900; font-size: 28px;
     line-height: 1.05; letter-spacing: -0.02em;
     margin-bottom: 6px;
   }
@@ -291,6 +317,155 @@
     opacity: 0.9;
   }
 
+  /* Onboarding + name input */
+  .onboard-field { display: flex; flex-direction: column; gap: 8px; }
+  .onboard-field > span { font-size: 13px; font-weight: 600; opacity: 0.8; }
+  .onboard-field input[type=text] {
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1.5px solid rgba(58,31,77,0.25);
+    background: white;
+    font-family: inherit;
+    font-size: 16px;
+    color: var(--plum);
+    outline: none;
+    width: 100%;
+  }
+  .onboard-field input[type=text]:focus { border-color: var(--tomato); }
+  .onboard-field small { font-size: 11px; opacity: 0.6; line-height: 1.4; }
+
+  /* Photo picker */
+  .photo-picker {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px;
+    background: white;
+    border: 1.5px solid rgba(58,31,77,0.18);
+    border-radius: 14px;
+  }
+  .photo-preview {
+    flex-shrink: 0;
+    width: 84px; height: 84px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--cream-2);
+    border: 2px solid var(--plum);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .photo-preview img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .photo-placeholder {
+    font-size: 30px;
+    opacity: 0.5;
+  }
+  .photo-buttons {
+    flex: 1;
+    display: flex; flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+  }
+  .photo-btn {
+    padding: 9px 12px;
+    background: var(--cream);
+    border: 1.5px solid var(--plum);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--plum);
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.1s;
+    display: block;
+  }
+  .photo-btn:active { transform: translate(1px, 1px); }
+  .photo-btn-remove {
+    background: transparent;
+    border-color: var(--tomato);
+    color: var(--tomato);
+  }
+
+  /* Settings sections */
+  .settings-section {
+    margin-top: 22px; padding-top: 16px;
+    border-top: 1px solid rgba(58,31,77,0.12);
+  }
+  .settings-section h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 17px; font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .settings-section-hint {
+    font-size: 11px; opacity: 0.6;
+    line-height: 1.4; margin-bottom: 12px;
+  }
+
+  /* Category toggles list */
+  #category-toggles {
+    display: flex; flex-direction: column; gap: 4px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 12px;
+    padding: 4px;
+  }
+  .cat-toggle-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+  .cat-toggle-row + .cat-toggle-row {
+    border-top: 1px solid rgba(58,31,77,0.06);
+  }
+  .cat-toggle-label {
+    font-size: 14px; font-weight: 500;
+  }
+
+  /* Custom video list in settings */
+  .custom-list {
+    margin-top: 12px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .custom-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 12px;
+    background: white;
+    border: 1px solid rgba(58,31,77,0.15);
+    border-radius: 10px;
+    font-size: 13px;
+  }
+  .custom-item img {
+    width: 48px; height: 36px;
+    border-radius: 4px;
+    object-fit: cover; flex-shrink: 0;
+  }
+  .custom-item .ci-title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 500; }
+  .custom-item .ci-remove {
+    background: none; border: none;
+    color: var(--tomato); font-size: 18px;
+    cursor: pointer; padding: 4px 8px;
+  }
+
+  /* Favorite star on cards */
+  .fav-star {
+    position: absolute;
+    top: 6px; right: 6px;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.85);
+    border: none;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  }
+  .fav-star:active { transform: scale(0.92); }
+  .fav-star.filled { background: var(--butter); }
+
   /* ---------- Player screen ---------- */
   .app { display: none; position: fixed; inset: 0; background: black; }
   .app.active { display: block; }
@@ -427,8 +602,15 @@
   </div>
 
   <div class="hero">
-    <h1>Hi Hannah!<br>What do you want to watch?</h1>
-    <p>Tap anything. It pauses when you stop chewing.</p>
+    <div class="hero-row">
+      <div class="hero-avatar" id="hero-avatar">
+        <div class="hero-avatar-fallback">🍽️</div>
+      </div>
+      <div class="hero-text">
+        <h1 id="hero-greeting">Hi!<br>What do you<br>want to watch?</h1>
+        <p>Tap anything. It pauses when you stop chewing.</p>
+      </div>
+    </div>
   </div>
 
   <div id="sections"></div>
@@ -442,31 +624,119 @@
   </div>
 </section>
 
+<!-- ========== Onboarding modal: ask for child's name and optional photo ========== -->
+<div class="modal-backdrop" id="onboarding-modal">
+  <div class="modal" id="onboarding-content">
+    <div style="text-align: center; margin-bottom: 16px;">
+      <div style="font-size: 60px; line-height: 1; margin-bottom: 8px;">🍽️</div>
+      <h3 style="margin-bottom: 6px;">Welcome to Eat & Watch</h3>
+      <p style="font-size: 13px; opacity: 0.7; line-height: 1.5;">
+        The video plays while your child eats and pauses when they stop. Let's set things up.
+      </p>
+    </div>
+
+    <label class="onboard-field">
+      <span>Child's name</span>
+      <input type="text" id="child-name-input" placeholder="e.g. Emma" autocomplete="given-name" maxlength="30">
+      <small>Used in the gentle voice nudge: "[name], keep eating to see the video."</small>
+    </label>
+
+    <div class="onboard-field" style="margin-top: 18px;">
+      <span>Special photo <span style="opacity: 0.55; font-weight: 400;">(optional)</span></span>
+      <div class="photo-picker">
+        <div class="photo-preview" id="onboarding-photo-preview">
+          <div class="photo-placeholder">📷</div>
+        </div>
+        <div class="photo-buttons">
+          <label class="photo-btn">
+            <input type="file" accept="image/*" capture="user" id="onboarding-photo-input" hidden>
+            <span>📸 Take photo</span>
+          </label>
+          <label class="photo-btn">
+            <input type="file" accept="image/*" id="onboarding-photo-upload" hidden>
+            <span>🖼️ Choose from library</span>
+          </label>
+          <button type="button" class="photo-btn photo-btn-remove" id="onboarding-photo-remove" style="display:none;">Remove photo</button>
+        </div>
+      </div>
+      <small>Becomes the home-screen icon and a special profile photo in the app.</small>
+    </div>
+
+    <button class="done-btn" id="onboarding-done" style="margin-top: 20px;">Get Started</button>
+
+    <p style="font-size: 11px; opacity: 0.55; margin-top: 14px; text-align: center; line-height: 1.5;">
+      Everything stays on this device. Photo and camera footage never leave the iPad.
+    </p>
+  </div>
+</div>
+
+<!-- ========== Settings modal ========== -->
 <div class="modal-backdrop" id="settings-modal">
   <div class="modal" id="settings-content">
     <h3>Parent settings</h3>
 
+    <label class="onboard-field" style="margin-bottom: 18px;">
+      <span>Child's name</span>
+      <input type="text" id="settings-child-name" maxlength="30">
+    </label>
+
+    <div class="onboard-field" style="margin-bottom: 18px;">
+      <span>Special photo</span>
+      <div class="photo-picker">
+        <div class="photo-preview" id="settings-photo-preview">
+          <div class="photo-placeholder">📷</div>
+        </div>
+        <div class="photo-buttons">
+          <label class="photo-btn">
+            <input type="file" accept="image/*" capture="user" id="settings-photo-input" hidden>
+            <span>📸 Take new photo</span>
+          </label>
+          <label class="photo-btn">
+            <input type="file" accept="image/*" id="settings-photo-upload" hidden>
+            <span>🖼️ Choose from library</span>
+          </label>
+          <button type="button" class="photo-btn photo-btn-remove" id="settings-photo-remove" style="display:none;">Remove photo</button>
+        </div>
+      </div>
+    </div>
+
     <div class="slider-row">
       <div class="slider-head">
         <span>Eating window</span>
-        <strong><span id="delay-val">25</span> seconds</strong>
+        <strong><span id="delay-val">10</span> seconds</strong>
       </div>
-      <input id="delay-slider" type="range" min="5" max="60" step="5" value="25">
+      <input id="delay-slider" type="range" min="5" max="60" step="5" value="10">
       <div style="font-size: 11px; opacity: 0.6; margin-top: 4px; line-height: 1.4;">
-        Video plays this long after each detected bite. Longer = more forgiving for slow eaters.
+        Video plays this long after each detected bite.
       </div>
     </div>
 
     <div class="toggle-row">
       <div class="toggle-label">
         Voice prompts
-        <small>Says "Hannah baby, keep eating" when paused</small>
+        <small id="voice-prompt-preview">Says the prompt when paused</small>
       </div>
       <div class="toggle on" id="voice-toggle"></div>
     </div>
 
+    <div class="settings-section">
+      <h4>Categories</h4>
+      <p class="settings-section-hint">Turn off categories you don't want to see.</p>
+      <div id="category-toggles"></div>
+    </div>
+
+    <div class="settings-section">
+      <h4>Add your own video</h4>
+      <p class="settings-section-hint">Paste any YouTube link to add it to "Our Favorites".</p>
+      <div class="paste-row-inner">
+        <input id="custom-url" type="text" inputmode="url" placeholder="YouTube link…">
+        <button id="custom-add">Add</button>
+      </div>
+      <div id="custom-list" class="custom-list"></div>
+    </div>
+
     <div class="research-note">
-      <strong>How detection works:</strong> The app watches a small region around her mouth on the camera feed. When something enters it (a spoon, a fork, a finger, her hand) AND her mouth is open — that's a bite. Each bite gives a fresh "eating window" of video time. Works whether she's feeding herself or being fed.
+      <strong>How detection works:</strong> The app watches a small region around the child's mouth. When something enters it (spoon, fork, finger) AND the mouth is open, that's a bite. Each bite gives a fresh eating window.
     </div>
 
     <button class="done-btn" id="settings-done">Done</button>
@@ -508,9 +778,21 @@
    recently watched so she keeps discovering new ones.
    ============================================================ */
 const LIBRARY = {
+  cocomelon: {
+    name: '🍉 CoComelon',
+    why: 'Loved by many toddlers but flagged by some parents as fast-paced. Kept separate so you can choose.',
+    defaultOn: false,
+    videos: [
+      { id: 'qXcMNBQnQMM', title: 'CoComelon Playground', channel: 'CoComelon', tag: 'Play' },
+      { id: 'tbbKjDjMDok', title: 'Bath Song', channel: 'CoComelon', tag: 'Routines' },
+      { id: 'fc-9cV7ZCDs', title: 'Yes Yes Vegetables', channel: 'CoComelon', tag: 'Eating' },
+      { id: 'ZanHgPprl-0', title: 'Clean Up Song', channel: 'CoComelon', tag: 'Routines' }
+    ]
+  },
   songs: {
     name: '🎵 Songs & Rhymes',
     why: 'Rhyme and repetition build phonemic awareness — the strongest predictor of early reading.',
+    defaultOn: true,
     videos: [
       { id: 'JegZYWlaq8w', title: 'Top 20 Kids Songs', channel: 'Super Simple Songs', tag: 'Vocabulary' },
       { id: 'LrAtBtQnvCE', title: 'Five Little Ducks', channel: 'Super Simple Songs', tag: 'Counting' },
@@ -518,15 +800,14 @@ const LIBRARY = {
       { id: 'CbBsx-dCI88', title: 'Nature Songs', channel: 'Super Simple Songs', tag: 'Nature' },
       { id: 'KGhWfzjcdRM', title: 'Best of the Year', channel: 'Super Simple Songs', tag: 'Variety' },
       { id: 'aEVV32tlxw0', title: 'Baby Shark & Bus', channel: 'Super Simple Songs', tag: 'Classic' },
-      { id: 'qXcMNBQnQMM', title: 'CoComelon Playground', channel: 'CoComelon', tag: 'Play' },
       { id: 'XqZsoesa55w', title: 'Baby Shark Dance', channel: 'Pinkfong', tag: 'Dance' },
-      { id: 'LFrKYjrIDs8', title: 'Rain Rain Go Away', channel: 'Super Simple Songs', tag: 'Classic' },
-      { id: 'nnqsEUxgSBQ', title: 'Ms Rachel & Elmo', channel: 'Ms Rachel', tag: 'ABCs' }
+      { id: 'LFrKYjrIDs8', title: 'Rain Rain Go Away', channel: 'Super Simple Songs', tag: 'Classic' }
     ]
   },
   talk: {
     name: '👄 Learn to Talk',
     why: 'Ms Rachel uses "parentese" — slow, sing-song speech that research shows accelerates language learning.',
+    defaultOn: true,
     videos: [
       { id: 'hTqtGJwsJVE', title: 'First Words', channel: 'Ms Rachel', tag: 'Speech' },
       { id: 'xkYved-ucGg', title: 'Learn to Talk', channel: 'Ms Rachel', tag: 'Language' },
@@ -536,12 +817,14 @@ const LIBRARY = {
       { id: 'yBj9Qlpwjcs', title: 'Words, Colors, Animals', channel: 'Ms Rachel', tag: 'Colors' },
       { id: 'VvoO9-L1KA4', title: 'Colors & Numbers', channel: 'Ms Rachel', tag: 'Numbers' },
       { id: 'zwL2o4jZxbc', title: "Baby's First 50 Words", channel: 'Ms Rachel', tag: 'Vocabulary' },
-      { id: 'omcNGrnt7Sg', title: 'Christmas First Words', channel: 'Ms Rachel', tag: 'Holiday' }
+      { id: 'omcNGrnt7Sg', title: 'Christmas First Words', channel: 'Ms Rachel', tag: 'Holiday' },
+      { id: 'nnqsEUxgSBQ', title: 'Ms Rachel & Elmo', channel: 'Ms Rachel', tag: 'ABCs' }
     ]
   },
   numbers: {
     name: '🔢 Numbers & Math',
     why: 'Numberblocks co-designed with the UK\'s math-teaching authority. Each number\'s shape shows its value.',
+    defaultOn: true,
     videos: [
       { id: 'ET7AjawVW3s', title: 'Learn to Count 1–5', channel: 'Numberblocks', tag: 'Counting' },
       { id: 'yj5p0-uGR5U', title: 'Number Adventures', channel: 'Numberblocks', tag: 'Episodes' },
@@ -555,7 +838,8 @@ const LIBRARY = {
   },
   letters: {
     name: '🔤 Letters & Phonics',
-    why: 'Alphablocks — from the same studio as Numberblocks, BAFTA-nominated, and in the DfE\'s recommended home-learning list.',
+    why: 'Alphablocks — same studio as Numberblocks, BAFTA-nominated, designed by literacy experts.',
+    defaultOn: true,
     videos: [
       { id: 'd-nW0Qt1Gw0', title: 'Learn to Read', channel: 'Alphablocks', tag: 'Reading' },
       { id: 's7LjGDcXqcs', title: 'Awesome Alphabet', channel: 'Alphablocks', tag: 'ABCs' },
@@ -567,6 +851,7 @@ const LIBRARY = {
   bluey: {
     name: '💙 Bluey',
     why: 'Praised by child psychologists for modeling rich family relationships and imaginative play.',
+    defaultOn: true,
     videos: [
       { id: 'cBti7aQBMk4', title: 'Sunny Adventures', channel: 'Bluey Official', tag: 'Family' },
       { id: 'MnzN6224I60', title: 'Best of Season 1', channel: 'Bluey Official', tag: 'Classic' },
@@ -580,6 +865,7 @@ const LIBRARY = {
   peppa: {
     name: '🐷 Peppa Pig',
     why: 'Short 5-minute stories with slow pacing and predictable structure — ideal for early narrative comprehension.',
+    defaultOn: true,
     videos: [
       { id: 'eDGLkeB9lRk', title: "Baby Evie's Doctor Visit", channel: 'Peppa Pig Official', tag: 'Doctor' },
       { id: 'o7JyP2NR660', title: 'Dinosaur Teeth Brushing', channel: 'Peppa Pig Official', tag: 'Hygiene' },
@@ -593,6 +879,7 @@ const LIBRARY = {
   benholly: {
     name: '🧚 Ben & Holly',
     why: 'Same creators as Peppa. Magical but grounded, with clear emotional arcs in short episodes.',
+    defaultOn: true,
     videos: [
       { id: 'QjZqZHBHHNE', title: 'Bedtime', channel: 'Ben & Holly Official', tag: 'Routine' },
       { id: 'bgG_3YtlG28', title: 'Spies', channel: 'Ben & Holly Official', tag: 'Adventure' },
@@ -603,7 +890,8 @@ const LIBRARY = {
   },
   heroes: {
     name: '🦸 Superheroes',
-    why: 'Spidey & His Amazing Friends is Marvel\'s preschool-tuned Spider-Man. Paw Patrol adds rescue teamwork stories.',
+    why: "Spidey & His Amazing Friends is Marvel's preschool-tuned Spider-Man. Paw Patrol adds rescue teamwork stories.",
+    defaultOn: true,
     videos: [
       { id: 'lBdbttgfmRw', title: 'Spidey: Season 1 Compilation', channel: 'Disney Junior', tag: '2 Hours' },
       { id: 'Rj76lv6pfVo', title: 'Spidey + Moon Girl', channel: 'Disney Junior', tag: 'Dinos' },
@@ -620,7 +908,8 @@ const LIBRARY = {
   },
   doc: {
     name: '🏥 Doc McStuffins',
-    why: 'A little girl who runs a toy clinic — gentle stories about health, empathy, and helping. Hannah\'s kind of show.',
+    why: "A little girl who runs a toy clinic — gentle stories about health, empathy, and helping.",
+    defaultOn: true,
     videos: [
       { id: 'L1Na0Xf_Gpk', title: 'The Doc Files (30 min)', channel: 'Disney Junior', tag: 'Medical' },
       { id: 'Syjls_1iUzE', title: 'The Doc Is In', channel: 'Disney Junior', tag: 'Healthy Habits' },
@@ -632,7 +921,8 @@ const LIBRARY = {
   },
   mickey: {
     name: '🐭 Mickey Mouse',
-    why: 'Mickey Mouse Clubhouse — interactive, encourages kids to answer questions and solve small problems with the characters.',
+    why: 'Interactive, encourages kids to answer questions and solve small problems with the characters.',
+    defaultOn: true,
     videos: [
       { id: 'o_YV7lSEbO0', title: 'All Season 1 Episodes', channel: 'Disney Junior', tag: 'Long' },
       { id: '-cV1COSHbYE', title: 'Best Donald Duck', channel: 'Disney Junior', tag: 'Donald' },
@@ -646,7 +936,8 @@ const LIBRARY = {
   },
   masha: {
     name: '🐻 Masha & The Bear',
-    why: 'Funny, heart-warming stories about a curious little girl and her patient bear friend. Faster-paced than most picks — best mixed with slower shows.',
+    why: 'Funny, heart-warming stories about a curious girl and her patient bear friend. Faster-paced than most picks.',
+    defaultOn: true,
     videos: [
       { id: 'mWXrM-OKBNQ', title: 'La-La-Lamb', channel: 'Masha and the Bear', tag: 'New' },
       { id: 'qE2mqt_R6Qs', title: 'Total Deja Vu', channel: 'Masha and the Bear', tag: 'Best of' },
@@ -659,7 +950,8 @@ const LIBRARY = {
   },
   natgeo: {
     name: '🌍 Nat Geo & Animals',
-    why: 'Real animals in their real habitats. National Geographic Kids, Wild Kratts, and Octonauts — curiosity-driven wildlife storytelling.',
+    why: 'Real animals in their real habitats. Curiosity-driven wildlife storytelling.',
+    defaultOn: true,
     videos: [
       { id: 'eUunYTYia3I', title: 'Amazing Animals (1 Hour)', channel: 'Nat Geo Kids', tag: '39 Species' },
       { id: 'h51XRnmHxR4', title: 'Wild Babies of National Parks', channel: 'Nat Geo Kids', tag: 'Babies' },
@@ -676,7 +968,8 @@ const LIBRARY = {
   },
   science: {
     name: '🔬 Science & Body',
-    why: 'Dr. Binocs explains how bodies and the world work. Skews slightly older but works for curious 3-year-olds.',
+    why: 'Dr. Binocs explains how bodies and the world work. Curious 3-year-olds love the visuals.',
+    defaultOn: true,
     videos: [
       { id: 'iyzDvZRNkqU', title: 'Your Amazing Brain', channel: 'Peekaboo Kidz', tag: 'Body' },
       { id: '1r3ictYe2kY', title: 'Mysteries of the Body', channel: 'Peekaboo Kidz', tag: 'Biology' },
@@ -688,12 +981,41 @@ const LIBRARY = {
   },
   feelings: {
     name: '💛 Feelings & Friends',
-    why: 'Daniel Tiger teaches social-emotional skills and gentle curiosity through simple stories.',
+    why: 'Daniel Tiger is one of the most consistently recommended low-stim shows for toddlers. Slow, kind speech, strong emotional-literacy focus.',
+    defaultOn: true,
     videos: [
       { id: 'ufk0_UwrkbA', title: "Daniel's Jobs", channel: 'PBS Kids', tag: 'Helping' },
       { id: 'CgdVYKS9iuI', title: 'Substitute Teacher', channel: 'PBS Kids', tag: 'Change' },
       { id: 'wuGv9RYOxTQ', title: 'Daniel & Tigey', channel: 'PBS Kids', tag: 'Friendship' }
     ]
+  },
+  lowstim: {
+    name: '🌿 Calm & Low-Stim',
+    why: 'Gentle pacing, soft music, scenes that change every 7+ seconds (vs 1-3s in most kids TV). Recommended by Common Sense Media and developmental specialists for sensitive or overstimulated toddlers.',
+    defaultOn: true,
+    videos: [
+      { id: 'F87fpmUgPUA', title: 'Sarah & Duck: 30 Min', channel: 'Sarah and Duck Official', tag: 'Calm' },
+      { id: 'Id2fco8nd-c', title: "Scarf Lady's House", channel: 'Sarah and Duck Official', tag: 'Sweet' },
+      { id: 'KRdIkWqYpSM', title: 'Summer Days Out', channel: 'Sarah and Duck Official', tag: 'Outdoor' },
+      { id: '8lHQWvxKPw8', title: 'Sarah & Duck Livestream', channel: 'Sarah and Duck Official', tag: 'Long' },
+      { id: 'PunVHiOxUEk', title: 'Hey Bear: Funky Veggies', channel: 'Hey Bear Sensory', tag: 'Sensory' }
+    ]
+  },
+  pocoyo: {
+    name: '🐤 Pocoyo',
+    why: "Stephen Fry narrates this BAFTA-winning show. Plain white backgrounds, simple shapes, gentle humor — designed by educators to be age-appropriate for 2-4 year olds.",
+    defaultOn: true,
+    videos: [
+      { id: 'TkPa-TUk7os', title: 'Pocoyo: Compilation 1', channel: 'Pocoyo English', tag: 'Episodes' },
+      { id: 'eOlbXZB0iYU', title: 'Pocoyo Adventures', channel: 'Pocoyo English', tag: 'Adventures' }
+    ]
+  },
+  favorites: {
+    name: '⭐ Our Favorites',
+    why: 'Tap the star on any video to save it here. You can also add your own YouTube links from settings.',
+    defaultOn: true,
+    isFavorites: true,
+    videos: [] // populated dynamically from localStorage
   }
 };
 
@@ -741,9 +1063,12 @@ function pickRandom(videos, n) {
 }
 
 /* ============================================================
-   Voice prompt — soft, motherly, normal pitch and speed
+   Voice prompt — uses child's name from localStorage
    ============================================================ */
-const PROMPT = "Hannah baby, keep eating to see the video.";
+function getPrompt() {
+  const name = (localStorage.getItem('eatwatch_child_name') || 'sweetie').trim();
+  return name + ', keep eating to see the video.';
+}
 let voiceEnabled = true;
 let preferredVoice = null;
 
@@ -772,10 +1097,10 @@ if ('speechSynthesis' in window) {
 function speakPrompt() {
   if (!voiceEnabled || !('speechSynthesis' in window)) return;
   try { speechSynthesis.cancel(); } catch (e) {}
-  const u = new SpeechSynthesisUtterance(PROMPT);
+  const u = new SpeechSynthesisUtterance(getPrompt());
   if (preferredVoice) u.voice = preferredVoice;
-  u.rate = 1.0;    // normal speed
-  u.pitch = 1.0;   // normal pitch
+  u.rate = 1.0;
+  u.pitch = 1.0;
   u.volume = 0.95;
   try { speechSynthesis.speak(u); } catch (e) {}
 }
@@ -797,7 +1122,7 @@ function speakPrompt() {
    
    After each bite, video plays for `eatingWindowMs`. No bite -> pause.
    ============================================================ */
-let eatingWindowMs = 25000;
+let eatingWindowMs = 10000;
 
 let ytPlayer = null, ytReady = false;
 let faceMesh = null, camera = null;
@@ -862,13 +1187,165 @@ function updateMotionBar(ratio) {
 }
 
 /* ============================================================
-   Gallery — all categories, vertical scroll, 3 per row
+   Storage helpers — child name, category toggles, favorites,
+   and custom videos all persist in localStorage.
    ============================================================ */
+const NAME_KEY = 'eatwatch_child_name';
+const CAT_TOGGLES_KEY = 'eatwatch_categories_v2';
+const FAVORITES_KEY = 'eatwatch_favorites_v1';
+const CUSTOM_VIDEOS_KEY = 'eatwatch_custom_videos_v1';
+const PHOTO_KEY = 'eatwatch_child_photo_v1';
+
+function getChildName() {
+  return (localStorage.getItem(NAME_KEY) || '').trim();
+}
+function setChildName(n) {
+  localStorage.setItem(NAME_KEY, (n || '').trim());
+}
+
+function getChildPhoto() {
+  return localStorage.getItem(PHOTO_KEY) || '';
+}
+function setChildPhoto(dataUrl) {
+  if (dataUrl) localStorage.setItem(PHOTO_KEY, dataUrl);
+  else localStorage.removeItem(PHOTO_KEY);
+}
+
+/* ============================================================
+   Photo processing — center-crop to square, resize, encode as
+   JPEG data URL. Two outputs:
+     - profile (256px)  for the hero/profile photo in-app
+     - icon (180px)     for the iOS home-screen icon
+   We store the larger one and downscale on use.
+   localStorage limits ~5MB per origin; a 256px JPEG is ~10-30KB.
+   ============================================================ */
+function processPhotoFile(file, callback) {
+  if (!file) return callback(null);
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const img = new Image();
+    img.onload = () => {
+      // Center-crop to square
+      const size = Math.min(img.width, img.height);
+      const sx = (img.width - size) / 2;
+      const sy = (img.height - size) / 2;
+
+      // Resize to 384px (sharp on retina, still tiny)
+      const TARGET = 384;
+      const canvas = document.createElement('canvas');
+      canvas.width = TARGET; canvas.height = TARGET;
+      const ctx = canvas.getContext('2d');
+      ctx.imageSmoothingQuality = 'high';
+      ctx.drawImage(img, sx, sy, size, size, 0, 0, TARGET, TARGET);
+
+      const dataUrl = canvas.toDataURL('image/jpeg', 0.86);
+      callback(dataUrl);
+    };
+    img.onerror = () => callback(null);
+    img.src = e.target.result;
+  };
+  reader.onerror = () => callback(null);
+  reader.readAsDataURL(file);
+}
+
+/* Generate the iOS-style touch icon (180x180 with rounded square treatment).
+   Returns a data URL for use in <link rel="apple-touch-icon">. */
+function makeTouchIcon(photoDataUrl, callback) {
+  const img = new Image();
+  img.onload = () => {
+    const ICON_SIZE = 180;
+    const canvas = document.createElement('canvas');
+    canvas.width = ICON_SIZE; canvas.height = ICON_SIZE;
+    const ctx = canvas.getContext('2d');
+    // Cream background (matches app theme)
+    ctx.fillStyle = '#fef3e2';
+    ctx.fillRect(0, 0, ICON_SIZE, ICON_SIZE);
+    ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(img, 0, 0, ICON_SIZE, ICON_SIZE);
+    callback(canvas.toDataURL('image/png'));
+  };
+  img.onerror = () => callback(null);
+  img.src = photoDataUrl;
+}
+
+function getCategoryToggles() {
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(CAT_TOGGLES_KEY) || '{}'); } catch (e) {}
+  // Merge with defaults so new categories show up correctly when added in updates
+  const result = {};
+  CATEGORIES.forEach(key => {
+    if (key in saved) result[key] = !!saved[key];
+    else result[key] = LIBRARY[key].defaultOn !== false;
+  });
+  return result;
+}
+function setCategoryToggle(key, on) {
+  const toggles = getCategoryToggles();
+  toggles[key] = !!on;
+  localStorage.setItem(CAT_TOGGLES_KEY, JSON.stringify(toggles));
+}
+
+function getFavorites() {
+  try { return JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]'); }
+  catch (e) { return []; }
+}
+function isFavorited(videoId) {
+  return getFavorites().some(v => v.id === videoId);
+}
+function toggleFavorite(video) {
+  const favs = getFavorites();
+  const idx = favs.findIndex(v => v.id === video.id);
+  if (idx >= 0) favs.splice(idx, 1);
+  else favs.unshift(video);
+  localStorage.setItem(FAVORITES_KEY, JSON.stringify(favs));
+}
+
+function getCustomVideos() {
+  try { return JSON.parse(localStorage.getItem(CUSTOM_VIDEOS_KEY) || '[]'); }
+  catch (e) { return []; }
+}
+function addCustomVideo(video) {
+  const list = getCustomVideos();
+  if (list.some(v => v.id === video.id)) return false;
+  list.unshift(video);
+  localStorage.setItem(CUSTOM_VIDEOS_KEY, JSON.stringify(list));
+  return true;
+}
+function removeCustomVideo(videoId) {
+  const list = getCustomVideos().filter(v => v.id !== videoId);
+  localStorage.setItem(CUSTOM_VIDEOS_KEY, JSON.stringify(list));
+}
+
+/* ============================================================
+   Gallery — only enabled categories. "Our Favorites" includes
+   both starred videos and parent-added custom videos.
+   ============================================================ */
+function getFavoritesPlusCustom() {
+  // Favorites first, then custom videos that aren't already favorited
+  const favs = getFavorites();
+  const custom = getCustomVideos();
+  const seen = new Set(favs.map(v => v.id));
+  const merged = favs.slice();
+  custom.forEach(v => { if (!seen.has(v.id)) merged.push(v); });
+  return merged;
+}
+
 function renderGallery() {
   sectionsEl.innerHTML = '';
+  const toggles = getCategoryToggles();
+
   CATEGORIES.forEach(key => {
+    if (!toggles[key]) return;
     const cat = LIBRARY[key];
-    const picked = pickRandom(cat.videos, PER_CATEGORY);
+
+    // For favorites: pull live from storage every render
+    let videos = cat.videos;
+    if (cat.isFavorites) {
+      videos = getFavoritesPlusCustom();
+      if (!videos.length) return;  // hide if nothing favorited yet
+    }
+
+    const picked = pickRandom(videos, PER_CATEGORY);
     if (!picked.length) return;
 
     const section = document.createElement('div');
@@ -893,29 +1370,285 @@ function renderGallery() {
 function makeCard(v) {
   const card = document.createElement('button');
   card.className = 'card';
+  const starred = isFavorited(v.id) ? ' filled' : '';
   card.innerHTML =
     '<div class="thumb">' +
     '<img src="https://img.youtube.com/vi/' + v.id + '/hqdefault.jpg" alt="" loading="lazy" ' +
     'onerror="this.src=\'https://img.youtube.com/vi/' + v.id + '/mqdefault.jpg\'">' +
+    '<button class="fav-star' + starred + '" data-id="' + v.id + '" aria-label="Favorite">★</button>' +
     '</div>' +
     '<div class="card-info">' +
-    '<div class="card-title">' + v.title + '</div>' +
-    '<span class="card-tag">' + v.tag + '</span>' +
-    '<div class="card-meta">' + v.channel + '</div>' +
+    '<div class="card-title">' + escapeHtml(v.title) + '</div>' +
+    '<span class="card-tag">' + escapeHtml(v.tag || 'Video') + '</span>' +
+    '<div class="card-meta">' + escapeHtml(v.channel || '') + '</div>' +
     '</div>';
+
+  // Star button: stop propagation so card doesn't also open
+  const star = card.querySelector('.fav-star');
+  star.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleFavorite(v);
+    star.classList.toggle('filled');
+  });
+
   card.onclick = () => start(v.id);
   return card;
+}
+
+function escapeHtml(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 }
 
 function reshuffleCategory(key) {
   const rail = sectionsEl.querySelector('.rail[data-cat="' + key + '"]');
   if (!rail) return;
-  const picked = pickRandom(LIBRARY[key].videos, PER_CATEGORY);
+  let videos = LIBRARY[key].videos;
+  if (LIBRARY[key].isFavorites) videos = getFavoritesPlusCustom();
+  const picked = pickRandom(videos, PER_CATEGORY);
   rail.innerHTML = '';
   picked.forEach(v => rail.appendChild(makeCard(v)));
 }
 
 shuffleBtn.onclick = () => renderGallery();
+
+/* ============================================================
+   Onboarding + name display
+   ============================================================ */
+function applyChildName() {
+  const name = getChildName();
+  const greetEl = document.getElementById('hero-greeting');
+  if (greetEl) {
+    if (name) {
+      greetEl.innerHTML = 'Hi ' + escapeHtml(name) + '!<br>What do you<br>want to watch?';
+    } else {
+      greetEl.innerHTML = 'Hi!<br>What do you<br>want to watch?';
+    }
+  }
+  const previewEl = document.getElementById('voice-prompt-preview');
+  if (previewEl) {
+    const n = name || 'sweetie';
+    previewEl.textContent = 'Says "' + n + ', keep eating to see the video" when paused';
+  }
+  applyChildPhoto();
+}
+
+function applyChildPhoto() {
+  const photo = getChildPhoto();
+  // Hero avatar
+  const avatar = document.getElementById('hero-avatar');
+  if (avatar) {
+    if (photo) {
+      avatar.innerHTML = '<img src="' + photo + '" alt="">';
+    } else {
+      avatar.innerHTML = '<div class="hero-avatar-fallback">🍽️</div>';
+    }
+  }
+  // Onboarding/settings preview thumbnails
+  ['onboarding-photo-preview', 'settings-photo-preview'].forEach(pid => {
+    const el = document.getElementById(pid);
+    if (!el) return;
+    if (photo) el.innerHTML = '<img src="' + photo + '" alt="">';
+    else el.innerHTML = '<div class="photo-placeholder">📷</div>';
+  });
+  // Show/hide remove buttons
+  ['onboarding-photo-remove', 'settings-photo-remove'].forEach(rid => {
+    const el = document.getElementById(rid);
+    if (el) el.style.display = photo ? 'block' : 'none';
+  });
+  // Update favicon and apple-touch-icon dynamically
+  updateFavicon(photo);
+}
+
+function updateFavicon(photoDataUrl) {
+  const head = document.head;
+
+  // Remove any prior dynamically-set icon links
+  head.querySelectorAll('link[data-dynamic-icon]').forEach(el => el.remove());
+
+  if (!photoDataUrl) return;  // keep the default emoji-favicon defined in <head>
+
+  makeTouchIcon(photoDataUrl, (iconDataUrl) => {
+    if (!iconDataUrl) return;
+    // apple-touch-icon for the iOS home screen
+    const apple = document.createElement('link');
+    apple.rel = 'apple-touch-icon';
+    apple.href = iconDataUrl;
+    apple.setAttribute('data-dynamic-icon', '1');
+    head.appendChild(apple);
+    // Generic favicon for browser tabs
+    const fav = document.createElement('link');
+    fav.rel = 'icon';
+    fav.type = 'image/png';
+    fav.href = iconDataUrl;
+    fav.setAttribute('data-dynamic-icon', '1');
+    head.appendChild(fav);
+  });
+}
+
+/* ============================================================
+   Photo picker wiring (used by both onboarding and settings)
+   ============================================================ */
+function wirePhotoPickers() {
+  const handlers = [
+    { input: 'onboarding-photo-input',  remove: 'onboarding-photo-remove' },
+    { input: 'onboarding-photo-upload', remove: 'onboarding-photo-remove' },
+    { input: 'settings-photo-input',    remove: 'settings-photo-remove'   },
+    { input: 'settings-photo-upload',   remove: 'settings-photo-remove'   }
+  ];
+  handlers.forEach(h => {
+    const inp = document.getElementById(h.input);
+    if (!inp) return;
+    inp.addEventListener('change', (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+      processPhotoFile(file, (dataUrl) => {
+        if (!dataUrl) { showToast('Could not load that image.'); return; }
+        try {
+          setChildPhoto(dataUrl);
+          applyChildPhoto();
+          showToast('Photo saved.');
+        } catch (err) {
+          // localStorage quota — try a smaller image
+          showToast('Photo too large to save.');
+        }
+        inp.value = '';  // reset so same file can be reselected later
+      });
+    });
+  });
+  ['onboarding-photo-remove', 'settings-photo-remove'].forEach(rid => {
+    const btn = document.getElementById(rid);
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      setChildPhoto('');
+      applyChildPhoto();
+    });
+  });
+}
+
+function showOnboardingIfNeeded() {
+  const onboarding = document.getElementById('onboarding-modal');
+  const input = document.getElementById('child-name-input');
+  if (!getChildName()) {
+    if (onboarding) onboarding.classList.add('show');
+    if (input) setTimeout(() => input.focus(), 250);
+  }
+}
+
+const onboardingDoneBtn = document.getElementById('onboarding-done');
+if (onboardingDoneBtn) {
+  onboardingDoneBtn.onclick = () => {
+    const input = document.getElementById('child-name-input');
+    const name = (input && input.value || '').trim();
+    if (!name) {
+      if (input) input.focus();
+      return;
+    }
+    setChildName(name);
+    document.getElementById('onboarding-modal').classList.remove('show');
+    applyChildName();
+  };
+}
+// Enter key submits onboarding
+const childNameInput = document.getElementById('child-name-input');
+if (childNameInput) {
+  childNameInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); onboardingDoneBtn.click(); }
+  });
+}
+
+/* ============================================================
+   Settings panel: name, category toggles, custom videos
+   ============================================================ */
+function renderCategoryToggles() {
+  const container = document.getElementById('category-toggles');
+  if (!container) return;
+  const toggles = getCategoryToggles();
+  container.innerHTML = '';
+  CATEGORIES.forEach(key => {
+    const cat = LIBRARY[key];
+    const row = document.createElement('div');
+    row.className = 'cat-toggle-row';
+    row.innerHTML =
+      '<div class="cat-toggle-label">' + cat.name + '</div>' +
+      '<div class="toggle ' + (toggles[key] ? 'on' : '') + '" data-cat="' + key + '"></div>';
+    const tog = row.querySelector('.toggle');
+    tog.addEventListener('click', () => {
+      const cur = tog.classList.toggle('on');
+      setCategoryToggle(key, cur);
+    });
+    container.appendChild(row);
+  });
+}
+
+function renderCustomList() {
+  const container = document.getElementById('custom-list');
+  if (!container) return;
+  const list = getCustomVideos();
+  container.innerHTML = '';
+  if (!list.length) {
+    container.innerHTML = '<div style="font-size:11px; opacity:0.5; text-align:center; padding:8px;">No custom videos yet.</div>';
+    return;
+  }
+  list.forEach(v => {
+    const row = document.createElement('div');
+    row.className = 'custom-item';
+    row.innerHTML =
+      '<img src="https://img.youtube.com/vi/' + v.id + '/mqdefault.jpg" alt="">' +
+      '<div class="ci-title">' + escapeHtml(v.title) + '</div>' +
+      '<button class="ci-remove" data-id="' + v.id + '" aria-label="Remove">✕</button>';
+    row.querySelector('.ci-remove').onclick = () => {
+      removeCustomVideo(v.id);
+      renderCustomList();
+      renderGallery();
+    };
+    container.appendChild(row);
+  });
+}
+
+const customAddBtn = document.getElementById('custom-add');
+if (customAddBtn) {
+  customAddBtn.onclick = async () => {
+    const input = document.getElementById('custom-url');
+    const id = extractVideoId(input.value);
+    if (!id) { showToast('Paste a valid YouTube link.'); return; }
+    // Try to fetch the title via YouTube's oEmbed endpoint (no API key needed)
+    let title = 'Custom video';
+    let channel = 'Added by you';
+    try {
+      const resp = await fetch('https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=' + id + '&format=json');
+      if (resp.ok) {
+        const data = await resp.json();
+        if (data.title) title = data.title;
+        if (data.author_name) channel = data.author_name;
+      }
+    } catch (e) { /* fall back to defaults */ }
+    const added = addCustomVideo({ id, title, channel, tag: 'Custom' });
+    if (added) {
+      input.value = '';
+      // Make sure favorites category is enabled so it shows up
+      setCategoryToggle('favorites', true);
+      renderCustomList();
+      renderCategoryToggles();
+      renderGallery();
+      showToast('Added to Our Favorites');
+    } else {
+      showToast('Already added.');
+    }
+  };
+}
+
+const settingsChildNameInput = document.getElementById('settings-child-name');
+if (settingsChildNameInput) {
+  settingsChildNameInput.addEventListener('input', () => {
+    setChildName(settingsChildNameInput.value);
+    applyChildName();
+  });
+}
 
 /* ============================================================
    Settings bindings
@@ -928,9 +1661,27 @@ voiceToggle.onclick = () => {
   voiceEnabled = !voiceEnabled;
   voiceToggle.classList.toggle('on', voiceEnabled);
 };
-settingsBtn.onclick = () => settingsModal.classList.add('show');
-settingsDone.onclick = () => settingsModal.classList.remove('show');
-settingsModal.onclick = (e) => { if (e.target === settingsModal) settingsModal.classList.remove('show'); };
+settingsBtn.onclick = () => {
+  // Refresh dynamic settings content every time
+  const nameInput = document.getElementById('settings-child-name');
+  if (nameInput) nameInput.value = getChildName();
+  renderCategoryToggles();
+  renderCustomList();
+  applyChildName();
+  settingsModal.classList.add('show');
+};
+settingsDone.onclick = () => {
+  settingsModal.classList.remove('show');
+  applyChildName();
+  renderGallery();
+};
+settingsModal.onclick = (e) => {
+  if (e.target === settingsModal) {
+    settingsModal.classList.remove('show');
+    applyChildName();
+    renderGallery();
+  }
+};
 
 /* ============================================================
    Toast
@@ -1322,6 +2073,9 @@ stopBtn.onclick = stop;
 
 /* Boot */
 renderGallery();
+wirePhotoPickers();
+applyChildName();
+showOnboardingIfNeeded();
 </script>
 </body>
 </html>
